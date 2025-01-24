@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronDown, Folder, Bolt, X, Loader2 } from 'lucide-react';
 import axios from 'axios';
 
@@ -42,7 +42,7 @@ export default function App() {
   const [inputText, setInputText] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Work');
   const [taskDuration, setTaskDuration] = useState(30);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [dueDate, setDueDate] = useState('');
@@ -112,25 +112,12 @@ export default function App() {
     }
   };
 
-  const [stickyNotes, setStickyNotes] = useState('');
   const [expandedSections, setExpandedSections] = useState({
     tasks: true,
     lists: true,
     tags: true
   });
 
-  const taskCategories = [
-    { 
-      name: 'Banner Ads', 
-      subtasks: ['Design variations', 'Copy testing', 'CTR analysis'],
-      expanded: true
-    },
-    {
-      name: 'Email A/B Tests',
-      subtasks: ['Subject lines', 'Preview text', 'Call-to-action'],
-      expanded: false
-    }
-  ];
 
   return (
     <div className="flex h-screen bg-gray-50">
