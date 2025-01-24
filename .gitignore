@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+dist/
+.env
+
+# Local development
+.DS_Store
+*.log
+
+# Build files
+.cache/
+.parcel-cache/
